@@ -1,0 +1,43 @@
+{
+  "name": "@ambitiondev/form-utils",
+  "version": "0.0.1",
+  "description": "A bundle of form utilities for usage in your (web)app",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup --config",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambitiondev/form-utils.git"
+  },
+  "keywords": [
+    "form",
+    "utilities",
+    "bnachtweh",
+    "ambitiondev",
+    "formdata",
+    "helper"
+  ],
+  "author": {
+    "email": "info@ambitiondev.io",
+    "name": "Berrie Nachtweh",
+    "url": "https://ambitiondev.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ambitiondev/form-utils/issues"
+  },
+  "homepage": "https://github.com/ambitiondev/form-utils#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.0",
+    "@rollup/plugin-typescript": "^5.0.2",
+    "fs-extra": "^9.0.1",
+    "rollup": "^2.26.8",
+    "tslib": "^2.0.1",
+    "typescript": "^4.0.2"
+  }
+}
