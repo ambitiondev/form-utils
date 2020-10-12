@@ -1,6 +1,6 @@
 {
   "name": "@ambitiondev/form-utils",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "description": "A bundle of form utilities for usage in your (web)app",
   "main": "dist/form-utils.js",
   "scripts": {
