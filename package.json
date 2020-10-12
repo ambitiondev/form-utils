@@ -2,7 +2,12 @@
   "name": "@ambitiondev/form-utils",
   "version": "0.0.2-2",
   "description": "A bundle of form utilities for usage in your (web)app",
-  "main": "dist/form-utils.js",
+  "main": "dist/form-utils.common.js",
+  "types": "dist/types/index.d.ts",
+  "module": "dist/form-utils.esm.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c --configProd",
     "release": "dotenv release-it",
