@@ -31,14 +31,14 @@ This function converts your formdata entries to a JSON-object. Useful for endpoi
 
 #### usage:
 ```
-    import { formDataToJson } from '@ambitiondev/form-utils'
+    import { formDataToJSON } from '@ambitiondev/form-utils'
 
     const form = document.querySelector('form');
     const data = new FormData(form);
 
     ...
 
-    const processedData = formDataToJson(data);
+    const processedData = formDataToJSON(data);
 ```
 
 This should return your form data as an object, like so:
