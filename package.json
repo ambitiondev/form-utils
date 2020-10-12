@@ -2,7 +2,7 @@
   "name": "@ambitiondev/form-utils",
   "version": "0.0.1",
   "description": "A bundle of form utilities for usage in your (web)app",
-  "main": "dist/index.js",
+  "main": "dist/form-utils.js",
   "scripts": {
     "build": "rollup -c --configProd",
     "release": "dotenv release-it",
@@ -54,5 +54,9 @@
     "hooks": {
       "after:bump": "npx auto-changelog --hide-credit --output CHANGELOG.md -p"
     }
+  },
+  "dependencies": {
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.27.3"
   }
 }
