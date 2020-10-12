@@ -52,7 +52,7 @@
       "release": true
     },
     "hooks": {
-      "after:bump": "npx auto-changelog --hide-credit --output CHANGELOG.md -p"
+      "before:bump": "npx auto-changelog --hide-credit --output CHANGELOG.md -p"
     }
   },
   "dependencies": {
