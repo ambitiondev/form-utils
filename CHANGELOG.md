@@ -2,11 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [0.0.2-2](https://github.com/ambitiondev/form-utils/compare/0.0.2-2...0.0.2-2)
+#### [0.0.2-3](https://github.com/ambitiondev/form-utils/compare/0.0.2-3...0.0.2-3)
+
+> 12 October 2020
+
+#### [0.0.2-3](https://github.com/ambitiondev/form-utils/compare/0.0.2-2...0.0.2-3)
 
 > 12 October 2020
 
 - chore: add types and update config ts [`1934e7a`](https://github.com/ambitiondev/form-utils/commit/1934e7a063bce37725c8aa7447b115bae60ad532)
+- release: 0.0.2-3 [`b5626f5`](https://github.com/ambitiondev/form-utils/commit/b5626f58bd73da4a0687321549abc0a0027b4eb0)
 
 #### [0.0.2-2](https://github.com/ambitiondev/form-utils/compare/0.0.2-1...0.0.2-2)
 
