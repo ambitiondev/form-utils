@@ -20,6 +20,3 @@ test
 
 # ENV SETTINGS
 .env
-
-# BUILD
-dist
