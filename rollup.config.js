@@ -1,45 +1,55 @@
-import typescript from '@rollup/plugin-typescript';
-import { getBabelOutputPlugin } from '@rollup/plugin-babel';
+import path from 'path'
+import { terser } from 'rollup-plugin-terser'
+import typescript from 'rollup-plugin-typescript2';
 
-const enabledFormats = [
-    'cjs',
-    'es'
-]
+const moduleName = 'form-utils'
 
-const destFolder = 'dist'
+const resolve = _path => path.resolve(__dirname, './', _path)
 
-function generateDestPath (options) {
-    return `${destFolder}/${options.format}/${options.name}.${options.format}.js`
+function outputConfig(suffix, format, opts = {}) {
+  return Object.assign(
+    {
+      file: resolve(`./dist/${moduleName}${suffix}.js`),
+      name: 'FormUtils',
+      exports: 'named',
+      sourcemap: true,
+      format,
+    },
+    opts
+  )
 }
 
-export default [
-    {
-        input: './src/index.ts',
-        output: enabledFormats.map((format) => ({
-            file: generateDestPath({
-                name: 'bundle',
-                format: format
-            }),
-            format: format
-        })),
-        plugins: [
-            getBabelOutputPlugin({
-                presets: ['@babel/preset-env']
-            }),
-            typescript()
-        ]
-    },
-    {
-        input: './src/index.ts',
-        output: {
-            file: 'dist/index.js',
-            format: 'cjs'
-        },
-        plugins: [
-            getBabelOutputPlugin({
-                presets: ['@babel/preset-env']
-            }),
-            typescript()
-        ]
+function baseConfig() {
+  return {
+    input: resolve('./src/index.ts'),
+    output: [
+      outputConfig('', 'umd'),
+      outputConfig('.esm', 'esm'),
+      outputConfig('.common', 'cjs'),
+    ],
+    plugins: [
+      typescript({
+        clean: true,
+        useTsconfigDeclarationDir: true,
+      })
+    ],
+  }
+}
+
+export default args => {
+  const configs = [baseConfig()]
+
+  if (args.configProd === true) {
+    const prodConfig = baseConfig()
+    prodConfig.plugins.push(terser())
+
+    for (const item of prodConfig.output) {
+      item.file = item.file.replace('.js', '.min.js')
+      item.sourcemap = false
     }
-]
+
+    configs.push(prodConfig)
+  }
+
+  return configs
+}

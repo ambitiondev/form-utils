@@ -1,6 +1,6 @@
 # Ambitiondev Form utils
 
-This bundle contains some handy form utilities to use in your (web)app.
+This bundle contains some useful form utilities to use in your (web)app.
 
 ..
 
@@ -11,7 +11,7 @@ This bundle contains some handy form utilities to use in your (web)app.
 | 2. | Features              |
 
 ## 1. Installation
-Simpy execute the following:
+Simply execute the following:
 
 ```
     npm i @ambitiondev/form-utils --save

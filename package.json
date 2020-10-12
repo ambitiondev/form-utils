@@ -4,7 +4,7 @@
   "description": "A bundle of form utilities for usage in your (web)app",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup --config",
+    "build": "rollup -c --configProd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -39,5 +39,19 @@
     "rollup": "^2.26.8",
     "tslib": "^2.0.1",
     "typescript": "^4.0.2"
+  },
+  "release-it": {
+    "git": {
+      "requireCleanWorkingDir": false,
+      "changelog": "npx auto-changelog --stdout --commit-limit false --hide-credit --output CHANGELOG.md",
+      "commitMessage": "release: ${version}",
+      "requireUpstream": false
+    },
+    "github": {
+      "release": true
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog --hide-credit --output CHANGELOG.md -p"
+    }
   }
 }
